@@ -3,16 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>First Class — Computational Thinking Foundations</title>
+<title>Data vs Information & AI Ethics</title>
 <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root {
-  --algo-blue: #3b82f6;
-  --algo-cyan: #06b6d4;
-  --pattern-purple: #8b5cf6;
-  --pattern-pink: #ec4899;
-  --problem-green: #10b981;
-  --problem-teal: #14b8a6;
+  --data-cyan: #06b6d4;
+  --data-blue: #3b82f6;
+  --ethics-pink: #ec4899;
+  --ethics-purple: #8b5cf6;
+  --info-green: #10b981;
+  --info-teal: #14b8a6;
   --bg: #0f1117;
   --bg2: #161b27;
   --text: #e8eaf0;
@@ -36,16 +36,16 @@ body{
   align-items:center;justify-content:center;
   text-align:center;
   padding:40px 20px;
-  background:radial-gradient(ellipse 80% 60% at 50% 0%, rgba(59,130,246,0.18) 0%, transparent 70%),
-             radial-gradient(ellipse 50% 40% at 80% 90%, rgba(139,92,246,0.12) 0%, transparent 60%),
+  background:radial-gradient(ellipse 80% 60% at 50% 0%, rgba(6,182,212,0.18) 0%, transparent 70%),
+             radial-gradient(ellipse 50% 40% at 80% 90%, rgba(236,72,153,0.12) 0%, transparent 60%),
              var(--bg);
   position:relative;overflow:hidden;
 }
 .hero-badge{
   font-family:'Fira Code',monospace;
-  font-size:12px;color:var(--algo-blue);
-  background:rgba(59,130,246,0.1);
-  border:1px solid rgba(59,130,246,0.3);
+  font-size:12px;color:var(--data-cyan);
+  background:rgba(6,182,212,0.1);
+  border:1px solid rgba(6,182,212,0.3);
   padding:6px 16px;border-radius:50px;
   letter-spacing:2px;margin-bottom:24px;
   display:inline-block;
@@ -54,20 +54,19 @@ body{
   font-family:'Fredoka One',cursive;
   font-size:clamp(2.4rem,7vw,5rem);
   line-height:1.05;
-  background:linear-gradient(135deg,#fff 20%,var(--algo-blue) 40%,var(--pattern-purple) 60%,var(--problem-green) 80%);
+  background:linear-gradient(135deg,#fff 20%,var(--data-cyan) 40%,var(--info-green) 60%,var(--ethics-pink) 80%);
   -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
   margin-bottom:16px;
 }
-.hero p{font-size:20px;color:var(--muted);max-width:650px;line-height:1.7;margin-bottom:36px;}
+.hero p{font-size:20px;color:var(--muted);max-width:700px;line-height:1.7;margin-bottom:36px;}
 .topic-pills{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;max-width:700px;}
 .pill{
   font-family:'Fira Code',monospace;font-size:13px;
   padding:8px 18px;border-radius:50px;font-weight:500;
   border:1px solid;
 }
-.pill-algo{color:var(--algo-blue);border-color:rgba(59,130,246,0.5);background:rgba(59,130,246,0.1);}
-.pill-pattern{color:var(--pattern-purple);border-color:rgba(139,92,246,0.5);background:rgba(139,92,246,0.1);}
-.pill-problem{color:var(--problem-green);border-color:rgba(16,185,129,0.5);background:rgba(16,185,129,0.1);}
+.pill-data{color:var(--data-cyan);border-color:rgba(6,182,212,0.5);background:rgba(6,182,212,0.1);}
+.pill-ethics{color:var(--ethics-pink);border-color:rgba(236,72,153,0.5);background:rgba(236,72,153,0.1);}
 
 .float-code{
   position:absolute;font-family:'Fira Code',monospace;
@@ -91,12 +90,12 @@ body{
   content:'';flex:1;height:1px;
   background:linear-gradient(90deg,var(--accent,rgba(255,255,255,0.1)),transparent);
 }
-.div-algo .label{color:var(--algo-blue);}
-.div-algo{--accent:rgba(59,130,246,0.4);}
-.div-pattern .label{color:var(--pattern-purple);}
-.div-pattern{--accent:rgba(139,92,246,0.4);}
-.div-problem .label{color:var(--problem-green);}
-.div-problem{--accent:rgba(16,185,129,0.4);}
+.div-data .label{color:var(--data-cyan);}
+.div-data{--accent:rgba(6,182,212,0.4);}
+.div-ethics .label{color:var(--ethics-pink);}
+.div-ethics{--accent:rgba(236,72,153,0.4);}
+.div-quiz .label{color:#f472b6;}
+.div-quiz{--accent:rgba(244,114,182,0.4);}
 
 /* ── CONTENT CARDS ── */
 .card{
@@ -110,17 +109,15 @@ body{
   content:'';position:absolute;top:0;left:0;right:0;height:2px;
   background:linear-gradient(90deg,transparent,var(--stripe,rgba(255,255,255,0.15)),transparent);
 }
-.card-algo::before{--stripe:rgba(59,130,246,0.6);}
-.card-pattern::before{--stripe:rgba(139,92,246,0.6);}
-.card-problem::before{--stripe:rgba(16,185,129,0.6);}
+.card-data::before{--stripe:rgba(6,182,212,0.6);}
+.card-ethics::before{--stripe:rgba(236,72,153,0.6);}
 
 .card h3{
   font-family:'Fredoka One',cursive;font-size:20px;
   margin-bottom:12px;
 }
-.card-algo h3{color:var(--algo-blue);}
-.card-pattern h3{color:var(--pattern-purple);}
-.card-problem h3{color:var(--problem-green);}
+.card-data h3{color:var(--data-cyan);}
+.card-ethics h3{color:var(--ethics-pink);}
 
 .card p,.card li{font-size:17px;line-height:1.75;color:rgba(255,255,255,0.72);}
 .card ul,.card ol{margin-left:22px;margin-top:8px;}
@@ -128,35 +125,31 @@ body{
 .card strong{color:#fff;}
 
 .tip-box{
-  background:rgba(59,130,246,0.06);
-  border-left:3px solid var(--algo-blue);
+  background:rgba(6,182,212,0.06);
+  border-left:3px solid var(--data-cyan);
   border-radius:8px;padding:13px 16px;
   margin-top:16px;font-size:16px;
   color:rgba(255,255,255,0.65);
 }
-.tip-box-pattern{background:rgba(139,92,246,0.06);border-left-color:var(--pattern-purple);}
-.tip-box-problem{background:rgba(16,185,129,0.06);border-left-color:var(--problem-green);}
+.tip-box-ethics{background:rgba(236,72,153,0.06);border-left-color:var(--ethics-pink);}
 
-/* ── INTERACTIVE SECTIONS ── */
 .demo-box{
   background:#0a0f1a;border-radius:12px;
   padding:24px;margin:20px 0;
   border:2px solid;
 }
-.box-algo{border-color:rgba(59,130,246,0.3);}
-.box-pattern{border-color:rgba(139,92,246,0.3);}
-.box-problem{border-color:rgba(16,185,129,0.3);}
+.box-data{border-color:rgba(6,182,212,0.3);}
+.box-ethics{border-color:rgba(236,72,153,0.3);}
 
 .box-title{
   font-family:'Fredoka One',cursive;
   font-size:18px;text-align:center;
   margin-bottom:20px;
 }
-.box-algo .box-title{color:var(--algo-blue);}
-.box-pattern .box-title{color:var(--pattern-purple);}
-.box-problem .box-title{color:var(--problem-green);}
+.box-data .box-title{color:var(--data-cyan);}
+.box-ethics .box-title{color:var(--ethics-pink);}
 
-input[type="text"],textarea,select{
+input[type="text"],select,textarea{
   width:100%;padding:12px 16px;
   background:rgba(255,255,255,0.05);
   border:1px solid rgba(255,255,255,0.15);
@@ -164,10 +157,10 @@ input[type="text"],textarea,select{
   font-family:'Nunito',sans-serif;font-size:15px;
   margin:8px 0;
 }
-input:focus,textarea:focus,select:focus{
-  outline:none;border-color:var(--algo-blue);
+input:focus,select:focus,textarea:focus{
+  outline:none;border-color:var(--data-cyan);
 }
-textarea{min-height:100px;resize:vertical;}
+textarea{min-height:80px;resize:vertical;}
 
 .btn{
   padding:12px 32px;border:none;
@@ -175,18 +168,9 @@ textarea{min-height:100px;resize:vertical;}
   font-size:16px;font-weight:700;cursor:pointer;
   transition:all 0.3s;margin:8px 4px;
 }
-.btn-algo{
-  background:linear-gradient(135deg,var(--algo-blue),var(--algo-cyan));
-  color:white;
-}
-.btn-pattern{
-  background:linear-gradient(135deg,var(--pattern-purple),var(--pattern-pink));
-  color:white;
-}
-.btn-problem{
-  background:linear-gradient(135deg,var(--problem-green),var(--problem-teal));
-  color:white;
-}
+.btn-data{background:linear-gradient(135deg,var(--data-cyan),var(--data-blue));color:white;}
+.btn-ethics{background:linear-gradient(135deg,var(--ethics-pink),var(--ethics-purple));color:white;}
+.btn-info{background:linear-gradient(135deg,var(--info-green),var(--info-teal));color:white;}
 .btn:hover{
   transform:translateY(-2px);
   box-shadow:0 8px 20px rgba(0,0,0,0.3);
@@ -199,134 +183,103 @@ textarea{min-height:100px;resize:vertical;}
   margin-top:16px;
 }
 
-/* Algorithm Steps Display */
-.steps-list{
-  background:rgba(59,130,246,0.05);
-  border-radius:10px;padding:20px;
-  margin:16px 0;
+/* ── QUIZ ── */
+.quiz-wrap{
+  background:var(--card);
+  border:1px solid rgba(244,114,182,0.2);
+  border-radius:20px;padding:36px 32px;
+  margin-top:10px;
 }
-.step-item{
-  background:rgba(255,255,255,0.03);
-  border-left:4px solid var(--algo-blue);
-  border-radius:8px;padding:12px 16px;
-  margin:10px 0;
-  display:flex;align-items:center;gap:12px;
+.quiz-header{text-align:center;margin-bottom:32px;}
+.quiz-header h2{
+  font-family:'Fredoka One',cursive;font-size:2rem;
+  color:#f472b6;margin-bottom:8px;
 }
-.step-num{
-  background:var(--algo-blue);
-  color:#000;font-weight:700;
-  width:32px;height:32px;
-  border-radius:50%;
-  display:flex;align-items:center;
-  justify-content:center;
-  flex-shrink:0;
+.quiz-header p{font-size:17px;color:var(--muted);}
+
+.quiz-scorebar{
+  display:flex;align-items:center;justify-content:center;
+  gap:20px;margin-bottom:28px;flex-wrap:wrap;
 }
-.step-text{
-  flex:1;font-size:16px;
+.score-chip{
+  font-family:'Fira Code',monospace;font-size:13px;
+  padding:8px 20px;border-radius:50px;
+  background:rgba(244,114,182,0.1);
+  border:1px solid rgba(244,114,182,0.3);
+  color:#f472b6;letter-spacing:1px;
+}
+.progress-bar-wrap{
+  flex:1;max-width:260px;height:6px;
+  background:rgba(255,255,255,0.07);border-radius:3px;overflow:hidden;
+}
+.progress-bar-fill{
+  height:100%;background:linear-gradient(90deg,#f472b6,#c084fc);
+  border-radius:3px;transition:width 0.4s ease;width:0%;
 }
 
-/* Pattern Grid */
-.pattern-grid{
-  display:grid;grid-template-columns:repeat(auto-fit,minmax(100px,1fr));
-  gap:12px;margin:16px 0;
+.qcard{
+  background:#0a0f1a;border:1px solid rgba(255,255,255,0.07);
+  border-radius:14px;padding:24px 26px;margin-bottom:18px;
+  transition:border-color 0.3s;
 }
-.pattern-box{
-  background:rgba(139,92,246,0.1);
-  border:2px solid var(--pattern-purple);
-  border-radius:10px;padding:20px;
-  text-align:center;
-  font-size:32px;
-  cursor:pointer;
-  transition:all 0.3s;
-}
-.pattern-box:hover{
-  transform:scale(1.05);
-  box-shadow:0 5px 15px rgba(139,92,246,0.3);
-}
-.pattern-box.selected{
-  background:var(--pattern-purple);
-  border-color:#fff;
-}
+.qcard.ok{border-color:rgba(57,255,20,0.35);}
+.qcard.bad{border-color:rgba(248,81,73,0.35);}
 
-/* Examples Grid */
-.examples-grid{
-  display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:16px;margin:20px 0;
+.qnum{
+  font-family:'Fira Code',monospace;font-size:10px;
+  color:var(--muted);letter-spacing:2px;margin-bottom:9px;
 }
-.example-card{
-  background:rgba(255,255,255,0.03);
-  border:2px solid rgba(139,92,246,0.3);
-  border-radius:12px;padding:20px;
-  transition:all 0.3s;
+.qtext{
+  font-family:'Fredoka One',cursive;font-size:19px;
+  color:#fff;margin-bottom:18px;line-height:1.4;
 }
-.example-card:hover{
-  transform:translateY(-3px);
-  border-color:var(--pattern-purple);
-  box-shadow:0 8px 25px rgba(139,92,246,0.2);
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:9px;}
+@media(max-width:480px){.opts{grid-template-columns:1fr;}}
+
+.opt{
+  background:rgba(255,255,255,0.04);
+  border:1px solid rgba(255,255,255,0.1);
+  border-radius:10px;padding:12px 15px;
+  font-family:'Nunito',sans-serif;font-size:15px;
+  color:rgba(255,255,255,0.65);
+  cursor:pointer;text-align:left;
+  transition:all 0.18s;line-height:1.4;
 }
-.example-icon{
-  font-size:40px;margin-bottom:12px;
+.opt:hover:not(:disabled){
+  background:rgba(244,114,182,0.08);
+  border-color:rgba(244,114,182,0.4);
+  color:#fff;transform:translateX(2px);
 }
-.example-title{
+.opt.correct{background:rgba(57,185,80,0.12);border-color:#3fb950;color:#3fb950;font-weight:700;}
+.opt.wrong{background:rgba(248,81,73,0.1);border-color:#f85149;color:#f85149;opacity:0.75;}
+.opt:disabled{cursor:default;}
+
+.feedback{
+  margin-top:12px;font-size:15px;min-height:20px;padding:0 2px;
+  font-weight:600;
+}
+.feedback.ok{color:#3fb950;}
+.feedback.bad{color:#f85149;}
+
+.final-box{
+  display:none;text-align:center;
+  padding:40px 20px;
+}
+.final-box.show{display:block;}
+.final-score{
   font-family:'Fredoka One',cursive;
-  font-size:16px;color:var(--pattern-purple);
+  font-size:clamp(3rem,10vw,5.5rem);
   margin-bottom:8px;
 }
-.example-desc{
-  font-size:14px;color:var(--muted);
-  line-height:1.6;
+.final-score.perfect{color:var(--info-green);filter:drop-shadow(0 0 20px rgba(16,185,129,0.5));}
+.final-score.great{color:var(--ethics-pink);filter:drop-shadow(0 0 20px rgba(236,72,153,0.5));}
+.final-score.ok{color:var(--data-cyan);}
+.final-stars{font-size:32px;letter-spacing:8px;margin:12px 0;}
+.final-msg{
+  font-family:'Fira Code',monospace;font-size:13px;
+  color:var(--muted);letter-spacing:1px;line-height:2.2;
+  white-space:pre-line;margin-bottom:24px;
 }
-
-/* Problem Breakdown */
-.breakdown-flow{
-  background:rgba(16,185,129,0.05);
-  border-radius:12px;padding:24px;
-  margin:16px 0;
-}
-.flow-step{
-  background:rgba(255,255,255,0.03);
-  border:2px solid var(--problem-green);
-  border-radius:10px;padding:16px;
-  margin:12px 0;
-  position:relative;
-}
-.flow-step::after{
-  content:'↓';
-  position:absolute;bottom:-24px;left:50%;
-  transform:translateX(-50%);
-  font-size:24px;color:var(--problem-green);
-}
-.flow-step:last-child::after{
-  display:none;
-}
-.flow-label{
-  font-family:'Fredoka One',cursive;
-  color:var(--problem-green);
-  font-size:14px;margin-bottom:6px;
-}
-.flow-content{
-  font-size:16px;
-}
-
-/* Comparison Table */
-.compare-table{
-  display:grid;grid-template-columns:1fr 1fr;
-  gap:16px;margin:20px 0;
-}
-.compare-col{
-  background:rgba(255,255,255,0.03);
-  border:2px solid;
-  border-radius:12px;padding:20px;
-}
-.compare-col.big{border-color:#ef4444;}
-.compare-col.small{border-color:var(--problem-green);}
-.compare-header{
-  font-family:'Fredoka One',cursive;
-  font-size:18px;margin-bottom:12px;
-  text-align:center;
-}
-.compare-col.big .compare-header{color:#ef4444;}
-.compare-col.small .compare-header{color:var(--problem-green);}
 </style>
 </head>
 <body>
@@ -334,742 +287,606 @@ textarea{min-height:100px;resize:vertical;}
 <!-- ╔══════════ HERO ══════════╗ -->
 <div class="hero">
   <div style="position:absolute;inset:0;overflow:hidden;pointer-events:none;">
-    <div class="float-code" style="top:12%;left:4%;">1. Boil water<br>2. Add tea<br>3. Add sugar<br>4. Stir → Algorithm!</div>
-    <div class="float-code" style="top:65%;left:2%;">Pattern: 2, 4, 6, 8...<br>AI finds patterns<br>in millions of data!</div>
-    <div class="float-code" style="top:20%;right:3%;">Big Problem:<br>Find fastest route<br>→ Break into steps!</div>
-    <div class="float-code" style="top:70%;right:4%;">if pattern found:<br>&nbsp;&nbsp;recognize("cat")<br>Pattern matching!</div>
+    <div class="float-code" style="top:12%;left:4%;">Data: 85, 92, 78<br>Information: Average = 85%<br>Knowledge: B+ grade</div>
+    <div class="float-code" style="top:65%;left:2%;">Raw numbers →<br>Meaningful insights →<br>Actionable decisions</div>
+    <div class="float-code" style="top:20%;right:3%;">Ethics: Fairness<br>Privacy, Transparency<br>Responsible AI</div>
+    <div class="float-code" style="top:70%;right:4%;">AI bias can harm<br>We must build<br>fair systems</div>
   </div>
-  <div class="hero-badge">// FIRST CLASS · COMPUTATIONAL THINKING //</div>
-  <h1>How Computers<br>Think & Solve Problems</h1>
-  <p>Learn the fundamental concepts behind ALL of computer science and AI — algorithms, patterns, and problem-solving!</p>
+  <div class="hero-badge">// FOUNDATIONS OF AI RESPONSIBILITY //</div>
+  <h1>Data, Information<br>&amp; AI Ethics</h1>
+  <p>Understand the difference between data and information, and learn why building ethical AI systems is critical for our future!</p>
   <div class="topic-pills">
-    <div class="pill pill-algo">📝 Algorithms</div>
-    <div class="pill pill-pattern">🔍 Pattern Recognition</div>
-    <div class="pill pill-problem">🧩 Breaking Problems</div>
+    <div class="pill pill-data">💾 Data vs Information</div>
+    <div class="pill pill-ethics">⚖️ Ethics of AI</div>
   </div>
 </div>
 
 <div class="wrapper">
 
-<!-- ╔══════════ PART 1: ALGORITHMS ══════════╗ -->
-<div class="section-divider div-algo">
-  <div class="label">📝 Part 1 — What is an Algorithm?</div>
+<!-- ╔══════════ DATA VS INFORMATION ══════════╗ -->
+<div class="section-divider div-data">
+  <div class="label">💾 Data vs Information</div>
 </div>
 
-<div class="card card-algo">
-  <h3>Simple Definition</h3>
-  <p>An <strong>algorithm</strong> is just a <strong>step-by-step set of instructions</strong> to solve a problem or complete a task.</p>
+<div class="card card-data">
+  <h3>What is Data?</h3>
+  <p><strong>Data</strong> are raw, unprocessed facts and figures without context or meaning. Think of data as the building blocks — they're useless alone!</p>
   
-  <div style="background:rgba(59,130,246,0.1);border:2px solid var(--algo-blue);border-radius:12px;padding:20px;margin:20px 0;text-align:center;">
-    <div style="font-family:'Fredoka One',cursive;font-size:24px;color:var(--algo-blue);margin-bottom:12px;">
-      Algorithm = Recipe for Computers
+  <div style="background:rgba(239,68,68,0.1);border:2px solid #ef4444;border-radius:12px;padding:24px;margin:20px 0;">
+    <div style="font-family:'Fredoka One',cursive;font-size:20px;color:#ef4444;margin-bottom:16px;text-align:center;">📊 Examples of Data (Raw Facts)</div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;">
+      <div style="background:rgba(255,255,255,0.05);border-radius:8px;padding:16px;text-align:center;">
+        <strong>Numbers</strong><br>
+        <div style="margin-top:8px;font-family:'Fira Code',monospace;">25, 30, 28, 32, 27</div>
+      </div>
+      <div style="background:rgba(255,255,255,0.05);border-radius:8px;padding:16px;text-align:center;">
+        <strong>Names</strong><br>
+        <div style="margin-top:8px;font-family:'Fira Code',monospace;">John, Mary, Alex</div>
+      </div>
+      <div style="background:rgba(255,255,255,0.05);border-radius:8px;padding:16px;text-align:center;">
+        <strong>Colors</strong><br>
+        <div style="margin-top:8px;font-family:'Fira Code',monospace;">Red, Blue, Green</div>
+      </div>
+      <div style="background:rgba(255,255,255,0.05);border-radius:8px;padding:16px;text-align:center;">
+        <strong>Dates</strong><br>
+        <div style="margin-top:8px;font-family:'Fira Code',monospace;">2024-03-22</div>
+      </div>
     </div>
-    <div style="font-size:16px;color:var(--muted);">
-      Just like a recipe tells you how to make food step-by-step,<br>
-      an algorithm tells a computer how to solve a problem step-by-step!
+    <div style="text-align:center;margin-top:16px;font-style:italic;color:var(--muted);">
+      ❌ These numbers and words have NO MEANING without context!
     </div>
-  </div>
-  
-  <div class="tip-box">💡 <strong>Key Point:</strong> You use algorithms every day without realizing it! Getting ready for school, making food, playing games — all algorithms!</div>
-</div>
-
-<div class="card card-algo">
-  <h3>Real-Life Algorithm Examples</h3>
-  
-  <div class="steps-list">
-    <div style="font-family:'Fredoka One',cursive;font-size:18px;color:var(--algo-blue);margin-bottom:16px;">
-      🍵 Making Tea (Algorithm)
-    </div>
-    <div class="step-item">
-      <div class="step-num">1</div>
-      <div class="step-text">Boil water in a kettle</div>
-    </div>
-    <div class="step-item">
-      <div class="step-num">2</div>
-      <div class="step-text">Put tea bag/powder in cup</div>
-    </div>
-    <div class="step-item">
-      <div class="step-num">3</div>
-      <div class="step-text">Pour hot water into cup</div>
-    </div>
-    <div class="step-item">
-      <div class="step-num">4</div>
-      <div class="step-text">Add sugar (if desired)</div>
-    </div>
-    <div class="step-item">
-      <div class="step-num">5</div>
-      <div class="step-text">Stir well</div>
-    </div>
-    <div class="step-item">
-      <div class="step-num">6</div>
-      <div class="step-text">Wait 2 minutes, remove tea bag</div>
-    </div>
-    <div class="step-item">
-      <div class="step-num">7</div>
-      <div class="step-text">Enjoy your tea! ☕</div>
-    </div>
-  </div>
-  
-  <div style="margin-top:20px;padding:16px;background:rgba(255,255,255,0.03);border-radius:10px;">
-    <strong>More Algorithm Examples:</strong>
-    <ul style="margin-top:8px;line-height:2;">
-      <li>📱 Unlocking your phone (swipe, enter PIN, face scan)</li>
-      <li>🎮 Game rules (if player touches enemy → lose life)</li>
-      <li>🔍 Google Search (find matching words → rank by relevance → show results)</li>
-      <li>📧 Sending an email (write message → add recipient → click send)</li>
-    </ul>
   </div>
 </div>
 
-<!-- Interactive: Write Your Own Algorithm -->
-<div class="demo-box box-algo">
-  <div class="box-title">✍️ Interactive: Write Your Own Algorithm!</div>
-  <p style="text-align:center;color:var(--muted);margin-bottom:20px;">Choose a daily task and break it into step-by-step instructions</p>
+<div class="card card-data">
+  <h3>What is Information?</h3>
+  <p><strong>Information</strong> is data that has been processed, organized, and given context to make it meaningful and useful!</p>
   
-  <label style="color:var(--text);font-weight:600;display:block;margin-bottom:8px;">Choose a Task:</label>
-  <select id="taskSelect" onchange="updateTaskExample()">
-    <option value="">-- Select a Task --</option>
-    <option value="brush">Brushing Your Teeth</option>
-    <option value="sandwich">Making a Sandwich</option>
-    <option value="school">Getting Ready for School</option>
-    <option value="custom">Write Your Own!</option>
+  <div style="background:rgba(16,185,129,0.1);border:2px solid var(--info-green);border-radius:12px;padding:24px;margin:20px 0;">
+    <div style="font-family:'Fredoka One',cursive;font-size:20px;color:var(--info-green);margin-bottom:16px;text-align:center;">💡 Examples of Information (Meaningful Data)</div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;">
+      <div style="background:rgba(255,255,255,0.05);border-radius:8px;padding:16px;">
+        <strong style="color:var(--info-green);">Temperature</strong><br>
+        <div style="margin-top:8px;">Average: 28°C<br><em style="font-size:13px;color:var(--muted);">It's warm outside!</em></div>
+      </div>
+      <div style="background:rgba(255,255,255,0.05);border-radius:8px;padding:16px;">
+        <strong style="color:var(--info-green);">Students</strong><br>
+        <div style="margin-top:8px;">Class roster: 3 students<br><em style="font-size:13px;color:var(--muted);">Small class size</em></div>
+      </div>
+      <div style="background:rgba(255,255,255,0.05);border-radius:8px;padding:16px;">
+        <strong style="color:var(--info-green);">Traffic Light</strong><br>
+        <div style="margin-top:8px;">Red means STOP<br><em style="font-size:13px;color:var(--muted);">Safety signal</em></div>
+      </div>
+      <div style="background:rgba(255,255,255,0.05);border-radius:8px;padding:16px;">
+        <strong style="color:var(--info-green);">Today's Date</strong><br>
+        <div style="margin-top:8px;">March 22, 2026<br><em style="font-size:13px;color:var(--muted);">Know what day it is</em></div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:16px;font-style:italic;color:var(--info-green);">
+      ✅ Now the data has CONTEXT and MEANING!
+    </div>
+  </div>
+</div>
+
+<div class="card card-data">
+  <h3>The Hierarchy: Data → Information → Knowledge → Wisdom</h3>
+  
+  <div style="background:rgba(6,182,212,0.1);border:2px solid var(--data-cyan);border-radius:12px;padding:30px;margin:20px 0;">
+    <div style="display:grid;grid-template-columns:1fr;gap:16px;">
+      <div style="background:rgba(239,68,68,0.15);border-left:4px solid #ef4444;border-radius:8px;padding:20px;">
+        <div style="font-family:'Fredoka One',cursive;font-size:18px;color:#ef4444;margin-bottom:8px;">
+          1️⃣ DATA (Raw Facts)
+        </div>
+        <div style="font-family:'Fira Code',monospace;margin:12px 0;">
+          85, 92, 78, 95, 88
+        </div>
+        <div style="font-size:14px;color:var(--muted);">Just numbers — no meaning yet</div>
+      </div>
+      
+      <div style="text-align:center;font-size:24px;color:var(--data-cyan);">↓</div>
+      
+      <div style="background:rgba(6,182,212,0.15);border-left:4px solid var(--data-cyan);border-radius:8px;padding:20px;">
+        <div style="font-family:'Fredoka One',cursive;font-size:18px;color:var(--data-cyan);margin-bottom:8px;">
+          2️⃣ INFORMATION (Processed Data)
+        </div>
+        <div style="margin:12px 0;">
+          Student's test scores: Average = 87.6%, which is a <strong>B+ grade</strong>
+        </div>
+        <div style="font-size:14px;color:var(--muted);">Data is now organized and meaningful!</div>
+      </div>
+      
+      <div style="text-align:center;font-size:24px;color:var(--info-green);">↓</div>
+      
+      <div style="background:rgba(16,185,129,0.15);border-left:4px solid var(--info-green);border-radius:8px;padding:20px;">
+        <div style="font-family:'Fredoka One',cursive;font-size:18px;color:var(--info-green);margin-bottom:8px;">
+          3️⃣ KNOWLEDGE (Applied Information)
+        </div>
+        <div style="margin:12px 0;">
+          Student performs better on <strong>Math tests (95, 92)</strong> than <strong>English tests (78)</strong> — needs more English practice!
+        </div>
+        <div style="font-size:14px;color:var(--muted);">Information analyzed to gain insights!</div>
+      </div>
+      
+      <div style="text-align:center;font-size:24px;color:var(--ethics-pink);">↓</div>
+      
+      <div style="background:rgba(236,72,153,0.15);border-left:4px solid var(--ethics-pink);border-radius:8px;padding:20px;">
+        <div style="font-family:'Fredoka One',cursive;font-size:18px;color:var(--ethics-pink);margin-bottom:8px;">
+          4️⃣ WISDOM (Actionable Decision)
+        </div>
+        <div style="margin:12px 0;">
+          Student should spend 2 extra hours per week on English reading and writing to improve overall performance and maintain strong grades.
+        </div>
+        <div style="font-size:14px;color:var(--muted);">Knowledge used to make good decisions!</div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="tip-box">💡 <strong>AI's Role:</strong> AI helps transform DATA into INFORMATION by finding patterns and extracting meaning from massive amounts of raw data!</div>
+</div>
+
+<!-- Interactive Demo -->
+<div class="demo-box box-data">
+  <div class="box-title">🎯 Interactive: Data to Information Converter</div>
+  <p style="text-align:center;color:var(--muted);margin-bottom:20px;">Turn raw data into meaningful information!</p>
+  
+  <label style="color:var(--text);font-weight:600;display:block;margin-bottom:8px;">Select Data Type:</label>
+  <select id="dataType">
+    <option value="scores">Test Scores</option>
+    <option value="temps">Temperature Readings</option>
+    <option value="sales">Sales Numbers</option>
   </select>
   
-  <div id="taskSteps" style="margin-top:20px;"></div>
+  <label style="color:var(--text);font-weight:600;display:block;margin:16px 0 8px 0;">Enter Data (comma-separated numbers):</label>
+  <input type="text" id="dataInput" placeholder="e.g., 85, 92, 78, 95, 88">
   
-  <div id="customTask" style="display:none;margin-top:16px;">
-    <label style="color:var(--text);font-weight:600;display:block;margin-bottom:8px;">Your Task:</label>
-    <input type="text" id="customTaskName" placeholder="e.g., Making a Paper Airplane">
-    
-    <label style="color:var(--text);font-weight:600;display:block;margin:16px 0 8px 0;">Write the steps (one per line):</label>
-    <textarea id="customSteps" placeholder="Step 1: Take a paper&#10;Step 2: Fold in half&#10;Step 3: ..."></textarea>
-    
-    <div style="text-align:center;margin-top:16px;">
-      <button class="btn btn-algo" onclick="showCustomAlgorithm()">Show My Algorithm 📝</button>
-    </div>
+  <div style="text-align:center;margin-top:16px;">
+    <button class="btn btn-data" onclick="convertData()">Convert to Information 💡</button>
   </div>
   
-  <div id="algoResult"></div>
+  <div id="dataResult"></div>
 </div>
 
-<div class="card card-algo">
-  <h3>Algorithms in AI</h3>
-  <p>AI uses algorithms for EVERYTHING! Here's how:</p>
+
+<!-- ╔══════════ ETHICS OF AI ══════════╗ -->
+<div class="section-divider div-ethics">
+  <div class="label">⚖️ Ethics of AI</div>
+</div>
+
+<div class="card card-ethics">
+  <h3>Why AI Ethics Matter</h3>
+  <p>AI is incredibly powerful, but with great power comes great responsibility! Let's explore the ethical challenges we must address.</p>
   
-  <div class="examples-grid">
-    <div class="example-card">
-      <div class="example-icon">🎬</div>
-      <div class="example-title">YouTube Recommendations</div>
-      <div class="example-desc">
-        1. Check what you watched<br>
-        2. Find similar videos<br>
-        3. Rank by match<br>
-        4. Show top 10
-      </div>
+  <div style="background:rgba(236,72,153,0.1);border:2px solid var(--ethics-pink);border-radius:12px;padding:24px;margin:20px 0;text-align:center;">
+    <div style="font-family:'Fredoka One',cursive;font-size:22px;color:var(--ethics-pink);margin-bottom:16px;">
+      ⚖️ The 5 Pillars of AI Ethics
     </div>
-    
-    <div class="example-card">
-      <div class="example-icon">📸</div>
-      <div class="example-title">Snapchat Filters</div>
-      <div class="example-desc">
-        1. Detect face in image<br>
-        2. Find eyes, nose, mouth<br>
-        3. Apply filter to face<br>
-        4. Track face movement
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-top:20px;">
+      <div style="background:rgba(255,255,255,0.05);border-radius:8px;padding:16px;">
+        <div style="font-size:32px;margin-bottom:8px;">⚖️</div>
+        <strong>Fairness</strong>
       </div>
-    </div>
-    
-    <div class="example-card">
-      <div class="example-icon">🚗</div>
-      <div class="example-title">Self-Driving Cars</div>
-      <div class="example-desc">
-        1. Read camera/sensors<br>
-        2. Detect obstacles<br>
-        3. Calculate safe path<br>
-        4. Control steering/speed
+      <div style="background:rgba(255,255,255,0.05);border-radius:8px;padding:16px;">
+        <div style="font-size:32px;margin-bottom:8px;">🔒</div>
+        <strong>Privacy</strong>
+      </div>
+      <div style="background:rgba(255,255,255,0.05);border-radius:8px;padding:16px;">
+        <div style="font-size:32px;margin-bottom:8px;">🔍</div>
+        <strong>Transparency</strong>
+      </div>
+      <div style="background:rgba(255,255,255,0.05);border-radius:8px;padding:16px;">
+        <div style="font-size:32px;margin-bottom:8px;">🛡️</div>
+        <strong>Safety</strong>
+      </div>
+      <div style="background:rgba(255,255,255,0.05);border-radius:8px;padding:16px;">
+        <div style="font-size:32px;margin-bottom:8px;">👥</div>
+        <strong>Accountability</strong>
       </div>
     </div>
   </div>
-  
-  <div class="tip-box">🤖 <strong>AI Secret:</strong> AI follows algorithms just like you! The difference? AI can follow MILLIONS of steps per second!</div>
 </div>
 
-
-<!-- ╔══════════ PART 2: PATTERN RECOGNITION ══════════╗ -->
-<div class="section-divider div-pattern">
-  <div class="label">🔍 Part 2 — Pattern Recognition</div>
-</div>
-
-<div class="card card-pattern">
-  <h3>What is Pattern Recognition?</h3>
-  <p><strong>Pattern recognition</strong> means finding <strong>repeating rules or similarities</strong> in information. It's how your brain (and AI) learns!</p>
+<div class="card card-ethics">
+  <h3>1. Bias in AI: The Fairness Problem</h3>
   
-  <div style="background:rgba(139,92,246,0.1);border:2px solid var(--pattern-purple);border-radius:12px;padding:20px;margin:20px 0;text-align:center;">
-    <div style="font-family:'Fredoka One',cursive;font-size:24px;color:var(--pattern-purple);margin-bottom:12px;">
-      Patterns Are Everywhere!
+  <div style="background:rgba(239,68,68,0.1);border:2px solid #ef4444;border-radius:12px;padding:24px;margin:20px 0;">
+    <strong style="color:#ef4444;">❌ The Problem:</strong>
+    <div style="margin-top:12px;line-height:1.9;">
+      If AI is trained only on photos of light-skinned people, it won't recognize dark-skinned faces well. This is <strong>unfair and discriminatory</strong>!
+      <br><br>
+      <strong>Real Example:</strong> In 2015, Google Photos labeled Black people as "gorillas" because the AI wasn't trained on diverse faces. This was harmful and wrong.
     </div>
-    <div style="font-size:16px;color:var(--muted);">
-      Your brain finds patterns to make sense of the world.<br>
-      AI does the EXACT same thing with data!
+  </div>
+  
+  <div style="background:rgba(16,185,129,0.1);border:2px solid var(--info-green);border-radius:12px;padding:24px;margin:20px 0;">
+    <strong style="color:var(--info-green);">✅ The Solution:</strong>
+    <div style="margin-top:12px;line-height:1.9;">
+      • Train AI on <strong>diverse, representative data</strong> from all groups<br>
+      • Test AI on different demographics to find bias<br>
+      • Have diverse teams building AI systems<br>
+      • Continuously monitor and fix biased outcomes
+    </div>
+  </div>
+  
+  <div class="tip-box tip-box-ethics">🎯 <strong>Your Role:</strong> When building AI, always ask: "Does my training data represent EVERYONE who will use this?"</div>
+</div>
+
+<div class="card card-ethics">
+  <h3>2. Privacy: Who Owns Your Data?</h3>
+  
+  <div style="background:rgba(239,68,68,0.1);border:2px solid #ef4444;border-radius:12px;padding:24px;margin:20px 0;">
+    <strong style="color:#ef4444;">❌ The Problem:</strong>
+    <div style="margin-top:12px;line-height:1.9;">
+      Companies collect massive amounts of data about you:
+      <ul style="margin-top:8px;line-height:2;">
+        <li>What you search for online</li>
+        <li>Where you go (GPS tracking)</li>
+        <li>What you buy and when</li>
+        <li>Who your friends are</li>
+        <li>Your health information</li>
+      </ul>
+      Should they be able to do this <strong>without asking</strong>? Should they <strong>sell your data</strong>?
+    </div>
+  </div>
+  
+  <div style="background:rgba(16,185,129,0.1);border:2px solid var(--info-green);border-radius:12px;padding:24px;margin:20px 0;">
+    <strong style="color:var(--info-green);">✅ The Solution:</strong>
+    <div style="margin-top:12px;line-height:1.9;">
+      • <strong>Informed consent:</strong> Tell users what data you collect and why<br>
+      • <strong>Data minimization:</strong> Only collect what you actually need<br>
+      • <strong>User control:</strong> Let people see, download, and delete their data<br>
+      • <strong>Encryption:</strong> Protect data from hackers<br>
+      • <strong>Clear policies:</strong> No hidden terms and conditions
     </div>
   </div>
 </div>
 
-<!-- Interactive Pattern Game -->
-<div class="demo-box box-pattern">
-  <div class="box-title">🎮 Pattern Recognition Game</div>
-  <p style="text-align:center;color:var(--muted);margin-bottom:20px;">Find the pattern and predict what comes next!</p>
+<div class="card card-ethics">
+  <h3>3. AI Replacing Jobs</h3>
   
-  <div id="patternGame"></div>
+  <div style="background:rgba(239,68,68,0.1);border:2px solid #ef4444;border-radius:12px;padding:24px;margin:20px 0;">
+    <strong style="color:#ef4444;">❌ The Problem:</strong>
+    <div style="margin-top:12px;line-height:1.9;">
+      AI and robots can do many jobs faster and cheaper than humans:
+      <ul style="margin-top:8px;line-height:2;">
+        <li>Self-driving trucks → Truck drivers lose jobs</li>
+        <li>Automated factories → Factory workers lose jobs</li>
+        <li>AI customer service → Call center workers lose jobs</li>
+        <li>AI writers/artists → Creative workers affected</li>
+      </ul>
+      What happens to these workers? Should we replace them?
+    </div>
+  </div>
+  
+  <div style="background:rgba(16,185,129,0.1);border:2px solid var(--info-green);border-radius:12px;padding:24px;margin:20px 0;">
+    <strong style="color:var(--info-green);">✅ The Solution:</strong>
+    <div style="margin-top:12px;line-height:1.9;">
+      • <strong>Reskilling programs:</strong> Train workers for new AI-related jobs<br>
+      • <strong>Human-AI collaboration:</strong> AI assists humans instead of replacing them<br>
+      • <strong>Gradual transition:</strong> Phase changes slowly, not overnight<br>
+      • <strong>Social support:</strong> Help affected workers financially<br>
+      • <strong>Create new jobs:</strong> AI creates new types of work too!
+    </div>
+  </div>
+</div>
+
+<div class="card card-ethics">
+  <h3>4. Transparency & Explainability</h3>
+  
+  <div style="background:rgba(239,68,68,0.1);border:2px solid #ef4444;border-radius:12px;padding:24px;margin:20px 0;">
+    <strong style="color:#ef4444;">❌ The Problem:</strong>
+    <div style="margin-top:12px;line-height:1.9;">
+      AI makes important decisions that affect your life:
+      <ul style="margin-top:8px;line-height:2;">
+        <li>Bank AI rejects your loan — WHY?</li>
+        <li>College admissions AI rejects you — WHY?</li>
+        <li>Job application AI doesn't hire you — WHY?</li>
+      </ul>
+      Often, AI can't explain its decisions. This is called a <strong>"black box"</strong> — you can't see inside!
+    </div>
+  </div>
+  
+  <div style="background:rgba(16,185,129,0.1);border:2px solid var(--info-green);border-radius:12px;padding:24px;margin:20px 0;">
+    <strong style="color:var(--info-green);">✅ The Solution:</strong>
+    <div style="margin-top:12px;line-height:1.9;">
+      • <strong>Explainable AI:</strong> Build AI that can explain its reasoning<br>
+      • <strong>Decision audit trails:</strong> Keep records of how decisions were made<br>
+      • <strong>Human oversight:</strong> Important decisions reviewed by humans<br>
+      • <strong>Right to explanation:</strong> Users can ask WHY and get an answer<br>
+      • <strong>Simpler models:</strong> When possible, use understandable AI
+    </div>
+  </div>
+</div>
+
+<div class="card card-ethics">
+  <h3>5. Deepfakes & Misinformation</h3>
+  
+  <div style="background:rgba(239,68,68,0.1);border:2px solid #ef4444;border-radius:12px;padding:24px;margin:20px 0;">
+    <strong style="color:#ef4444;">❌ The Problem:</strong>
+    <div style="margin-top:12px;line-height:1.9;">
+      AI can create <strong>deepfakes</strong> — fake videos/audio that look and sound real:
+      <ul style="margin-top:8px;line-height:2;">
+        <li>Make politicians "say" things they never said</li>
+        <li>Create fake news that looks real</li>
+        <li>Spread misinformation rapidly</li>
+        <li>Damage reputations unfairly</li>
+        <li>Manipulate elections</li>
+      </ul>
+      This is <strong>extremely dangerous</strong> for society!
+    </div>
+  </div>
+  
+  <div style="background:rgba(16,185,129,0.1);border:2px solid var(--info-green);border-radius:12px;padding:24px;margin:20px 0;">
+    <strong style="color:var(--info-green);">✅ The Solution:</strong>
+    <div style="margin-top:12px;line-height:1.9;">
+      • <strong>Detection tools:</strong> Build AI to detect deepfakes<br>
+      • <strong>Watermarking:</strong> Mark AI-generated content clearly<br>
+      • <strong>Media literacy:</strong> Teach people to spot fakes<br>
+      • <strong>Legal consequences:</strong> Laws against malicious deepfakes<br>
+      • <strong>Platform responsibility:</strong> Social media must remove harmful fakes
+    </div>
+  </div>
+</div>
+
+<!-- Interactive Ethics Quiz -->
+<div class="demo-box box-ethics">
+  <div class="box-title">🤔 Interactive: Ethical Dilemma Scenarios</div>
+  <p style="text-align:center;color:var(--muted);margin-bottom:20px;">What would YOU do in these ethical situations?</p>
+  
+  <div id="ethicsScenario" style="background:rgba(255,255,255,0.03);border-radius:10px;padding:24px;"></div>
   
   <div style="text-align:center;margin-top:20px;">
-    <button class="btn btn-pattern" onclick="loadPattern()">Start Game 🎮</button>
-  </div>
-  
-  <div id="patternResult"></div>
-</div>
-
-<div class="card card-pattern">
-  <h3>Pattern Recognition in Real Life</h3>
-  
-  <div style="background:rgba(255,255,255,0.03);border-radius:10px;padding:20px;margin:16px 0;">
-    <strong>Examples You Use Every Day:</strong>
-    <ul style="margin-top:12px;line-height:2.2;">
-      <li>🔢 <strong>Number Patterns:</strong> 2, 4, 6, 8... (you know 10 comes next!)</li>
-      <li>🎵 <strong>Music Patterns:</strong> Recognizing a song after hearing 2 seconds</li>
-      <li>👤 <strong>Face Recognition:</strong> Spotting your friend in a crowd</li>
-      <li>🌦️ <strong>Weather Patterns:</strong> Dark clouds → probably going to rain</li>
-      <li>🗣️ <strong>Language Patterns:</strong> Understanding accents and slang</li>
-    </ul>
-  </div>
-</div>
-
-<div class="card card-pattern">
-  <h3>How AI Uses Pattern Recognition</h3>
-  
-  <div class="examples-grid">
-    <div class="example-card">
-      <div class="example-icon">📧</div>
-      <div class="example-title">Spam Email Detection</div>
-      <div class="example-desc">
-        <strong>Pattern in Spam:</strong><br>
-        • ALL CAPS words<br>
-        • "FREE!!!" "WIN NOW!!!"<br>
-        • Suspicious links<br>
-        <br>
-        AI learns these patterns and blocks spam!
-      </div>
-    </div>
-    
-    <div class="example-card">
-      <div class="example-icon">🐱</div>
-      <div class="example-title">Image Recognition</div>
-      <div class="example-desc">
-        <strong>Pattern in Cats:</strong><br>
-        • Pointy ears<br>
-        • Whiskers<br>
-        • Four legs<br>
-        <br>
-        AI sees 1000 cat photos, learns the pattern!
-      </div>
-    </div>
-    
-    <div class="example-card">
-      <div class="example-icon">🎬</div>
-      <div class="example-title">Netflix Recommendations</div>
-      <div class="example-desc">
-        <strong>Pattern in Viewing:</strong><br>
-        • You watch action movies<br>
-        • Always on Friday nights<br>
-        • Like Marvel/DC<br>
-        <br>
-        AI finds pattern → recommends similar shows!
-      </div>
-    </div>
-  </div>
-  
-  <div class="tip-box tip-box-pattern">🧠 <strong>Brain vs AI:</strong> Your brain learned to recognize faces by seeing thousands of faces as a baby. AI does the SAME thing with data!</div>
-</div>
-
-
-<!-- ╔══════════ PART 3: BREAKING PROBLEMS ══════════╗ -->
-<div class="section-divider div-problem">
-  <div class="label">🧩 Part 3 — Breaking Problems into Steps</div>
-</div>
-
-<div class="card card-problem">
-  <h3>Why Break Problems into Steps?</h3>
-  
-  <div class="compare-table">
-    <div class="compare-col big">
-      <div class="compare-header">😰 Big Scary Problem</div>
-      <div style="text-align:center;font-size:48px;margin:20px 0;">🏔️</div>
-      <div style="font-size:15px;text-align:center;color:var(--muted);">
-        "Build an AI chatbot"<br>
-        <br>
-        Overwhelming!<br>
-        Don't know where to start!<br>
-        Feels impossible!
-      </div>
-    </div>
-    
-    <div class="compare-col small">
-      <div class="compare-header">✅ Small Easy Steps</div>
-      <div style="text-align:center;font-size:48px;margin:20px 0;">🪜</div>
-      <div style="font-size:15px;text-align:center;color:var(--muted);">
-        Step 1: Learn Python<br>
-        Step 2: Learn text processing<br>
-        Step 3: Build simple responses<br>
-        Step 4: Add AI model<br>
-        <br>
-        Each step is manageable!
-      </div>
-    </div>
-  </div>
-  
-  <div style="background:rgba(16,185,129,0.1);border:2px solid var(--problem-green);border-radius:12px;padding:20px;margin:20px 0;text-align:center;">
-    <div style="font-family:'Fredoka One',cursive;font-size:22px;color:var(--problem-green);margin-bottom:12px;">
-      "The secret to getting ahead is getting started."
-    </div>
-    <div style="font-size:16px;color:var(--muted);">
-      Big problems aren't scary when you break them into tiny steps!
-    </div>
-  </div>
-</div>
-
-<div class="card card-problem">
-  <h3>Example: How Does Google Maps Work?</h3>
-  <p>Seems complicated, right? Let's break it down:</p>
-  
-  <div class="breakdown-flow">
-    <div class="flow-step">
-      <div class="flow-label">STEP 1</div>
-      <div class="flow-content">Get your current location (GPS)</div>
-    </div>
-    
-    <div class="flow-step">
-      <div class="flow-label">STEP 2</div>
-      <div class="flow-content">Get your destination address</div>
-    </div>
-    
-    <div class="flow-step">
-      <div class="flow-label">STEP 3</div>
-      <div class="flow-content">Load map data for that area</div>
-    </div>
-    
-    <div class="flow-step">
-      <div class="flow-label">STEP 4</div>
-      <div class="flow-content">Find ALL possible routes</div>
-    </div>
-    
-    <div class="flow-step">
-      <div class="flow-label">STEP 5</div>
-      <div class="flow-content">Check traffic data for each route</div>
-    </div>
-    
-    <div class="flow-step">
-      <div class="flow-label">STEP 6</div>
-      <div class="flow-content">Calculate time for each route</div>
-    </div>
-    
-    <div class="flow-step">
-      <div class="flow-label">STEP 7</div>
-      <div class="flow-content">Pick the fastest route</div>
-    </div>
-    
-    <div class="flow-step">
-      <div class="flow-label">STEP 8</div>
-      <div class="flow-content">Show you directions step-by-step!</div>
-    </div>
-  </div>
-  
-  <div class="tip-box tip-box-problem">💡 See? Even super complex apps like Google Maps are just MANY small steps working together!</div>
-</div>
-
-<!-- Interactive Exercise -->
-<div class="demo-box box-problem">
-  <div class="box-title">🎯 Your Turn: Break Down a Problem!</div>
-  <p style="text-align:center;color:var(--muted);margin-bottom:20px;">Choose a problem and break it into small steps</p>
-  
-  <label style="color:var(--text);font-weight:600;display:block;margin-bottom:8px;">Choose a Problem:</label>
-  <select id="problemSelect" onchange="updateProblemExample()">
-    <option value="">-- Select a Problem --</option>
-    <option value="instagram">How does Instagram decide which posts to show first?</option>
-    <option value="netflix">How does Netflix recommend shows?</option>
-    <option value="game">How does a video game detect if you won?</option>
-    <option value="custom">Write Your Own Problem!</option>
-  </select>
-  
-  <div id="problemSteps" style="margin-top:20px;"></div>
-  
-  <div id="customProblem" style="display:none;margin-top:16px;">
-    <label style="color:var(--text);font-weight:600;display:block;margin-bottom:8px;">Your Problem:</label>
-    <input type="text" id="customProblemName" placeholder="e.g., How does Spotify recommend songs?">
-    
-    <label style="color:var(--text);font-weight:600;display:block;margin:16px 0 8px 0;">Break it into steps:</label>
-    <textarea id="customProblemSteps" placeholder="Step 1: Check what songs you listen to&#10;Step 2: Find patterns in your music taste&#10;Step 3: ..."></textarea>
-    
-    <div style="text-align:center;margin-top:16px;">
-      <button class="btn btn-problem" onclick="showCustomProblem()">Show Solution 🧩</button>
-    </div>
-  </div>
-  
-  <div id="problemResult"></div>
-</div>
-
-<div class="card card-problem">
-  <h3>How This Connects to AI</h3>
-  <p>Every AI system you use is built by breaking big problems into tiny steps:</p>
-  
-  <div style="margin-top:20px;">
-    <div style="background:rgba(255,255,255,0.03);border-left:4px solid var(--problem-green);border-radius:8px;padding:16px;margin:12px 0;">
-      <strong style="color:var(--problem-green);">🤖 Self-Driving Car:</strong>
-      <div style="margin-top:8px;color:var(--muted);line-height:1.8;">
-        Big Problem: "Drive safely to destination"<br>
-        → Broken into: Detect road, Read signs, Avoid obstacles, Follow rules, Navigate route, Park safely
-      </div>
-    </div>
-    
-    <div style="background:rgba(255,255,255,0.03);border-left:4px solid var(--problem-green);border-radius:8px;padding:16px;margin:12px 0;">
-      <strong style="color:var(--problem-green);">💬 ChatGPT:</strong>
-      <div style="margin-top:8px;color:var(--muted);line-height:1.8;">
-        Big Problem: "Understand and answer any question"<br>
-        → Broken into: Read text, Find patterns in words, Understand context, Generate response, Check if it makes sense
-      </div>
-    </div>
-    
-    <div style="background:rgba(255,255,255,0.03);border-left:4px solid var(--problem-green);border-radius:8px;padding:16px;margin:12px 0;">
-      <strong style="color:var(--problem-green);">📸 Face Unlock:</strong>
-      <div style="margin-top:8px;color:var(--muted);line-height:1.8;">
-        Big Problem: "Unlock phone only for owner"<br>
-        → Broken into: Detect face, Find key points (eyes, nose), Compare to saved face, Calculate match percentage, Unlock if match > 95%
-      </div>
-    </div>
+    <button class="btn btn-ethics" onclick="loadEthicsScenario()">Start Scenarios 🤔</button>
   </div>
 </div>
 
 
-<!-- ╔══════════ SUMMARY ══════════╗ -->
-<div class="section-divider div-algo">
-  <div class="label">🎯 Summary & Key Takeaways</div>
+<!-- ╔══════════ QUIZ ══════════╗ -->
+<div class="section-divider div-quiz">
+  <div class="label">⚡ Final Knowledge Check</div>
 </div>
 
-<div class="card card-algo">
-  <h3>What We Learned Today</h3>
-  
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin:20px 0;">
-    <div style="background:rgba(59,130,246,0.1);border:2px solid var(--algo-blue);border-radius:12px;padding:20px;">
-      <div style="font-size:32px;margin-bottom:12px;">📝</div>
-      <div style="font-family:'Fredoka One',cursive;font-size:18px;color:var(--algo-blue);margin-bottom:8px;">Algorithms</div>
-      <div style="font-size:14px;color:var(--muted);line-height:1.7;">
-        Step-by-step instructions to solve problems. Like recipes for computers!
-      </div>
-    </div>
-    
-    <div style="background:rgba(139,92,246,0.1);border:2px solid var(--pattern-purple);border-radius:12px;padding:20px;">
-      <div style="font-size:32px;margin-bottom:12px;">🔍</div>
-      <div style="font-family:'Fredoka One',cursive;font-size:18px;color:var(--pattern-purple);margin-bottom:8px;">Pattern Recognition</div>
-      <div style="font-size:14px;color:var(--muted);line-height:1.7;">
-        Finding repeating rules in data. How AI learns from examples!
-      </div>
-    </div>
-    
-    <div style="background:rgba(16,185,129,0.1);border:2px solid var(--problem-green);border-radius:12px;padding:20px;">
-      <div style="font-size:32px;margin-bottom:12px;">🧩</div>
-      <div style="font-family:'Fredoka One',cursive;font-size:18px;color:var(--problem-green);margin-bottom:8px;">Breaking Problems</div>
-      <div style="font-size:14px;color:var(--muted);line-height:1.7;">
-        Turning big scary problems into small manageable steps!
-      </div>
-    </div>
+<div class="quiz-wrap">
+  <div class="quiz-header">
+    <h2>Data & Ethics Quiz</h2>
+    <p>12 questions covering Data vs Information and AI Ethics</p>
   </div>
-  
-  <div style="background:linear-gradient(135deg,rgba(59,130,246,0.1),rgba(139,92,246,0.1),rgba(16,185,129,0.1));border-radius:12px;padding:24px;margin-top:20px;text-align:center;">
-    <div style="font-family:'Fredoka One',cursive;font-size:22px;margin-bottom:12px;">
-      🤖 These 3 Concepts = Foundation of ALL Computing & AI!
-    </div>
-    <div style="font-size:16px;color:var(--muted);line-height:1.8;">
-      Every app, every AI system, every computer program uses these concepts.<br>
-      You now understand how computers think! 🎉
-    </div>
+  <div class="quiz-scorebar">
+    <div class="score-chip" id="scoreChip">0 / 12</div>
+    <div class="progress-bar-wrap"><div class="progress-bar-fill" id="progBar"></div></div>
   </div>
-</div>
-
-<div class="card card-problem">
-  <h3>🏠 Homework Challenge</h3>
-  <p>Choose ONE activity to practice what you learned:</p>
-  
-  <div style="background:rgba(255,255,255,0.03);border-radius:10px;padding:20px;margin:16px 0;">
-    <strong>Option 1: Algorithm Practice</strong>
-    <ul style="margin-top:8px;line-height:2;">
-      <li>Write an algorithm for brushing your teeth</li>
-      <li>Write an algorithm for making your favorite food</li>
-      <li>Write an algorithm for getting ready for school</li>
-    </ul>
-  </div>
-  
-  <div style="background:rgba(255,255,255,0.03);border-radius:10px;padding:20px;margin:16px 0;">
-    <strong>Option 2: Find Patterns</strong>
-    <ul style="margin-top:8px;line-height:2;">
-      <li>Find 3 number patterns in real life (time, prices, dates)</li>
-      <li>Notice patterns in your daily routine</li>
-      <li>Find patterns in how apps recommend content to you</li>
-    </ul>
-  </div>
-  
-  <div style="background:rgba(255,255,255,0.03);border-radius:10px;padding:20px;margin:16px 0;">
-    <strong>Option 3: Break Down a Problem</strong>
-    <ul style="margin-top:8px;line-height:2;">
-      <li>How does Spotify know what songs you'll like?</li>
-      <li>How does your phone predict what word you'll type next?</li>
-      <li>How do video games make characters move realistically?</li>
-    </ul>
-  </div>
-  
-  <div class="tip-box tip-box-problem">📝 <strong>Tip:</strong> Write your answers in a notebook or document. We'll discuss them in the next class!</div>
-</div>
-
-<div style="text-align:center;margin:50px 0;">
-  <div style="font-family:'Fredoka One',cursive;font-size:2.5em;background:linear-gradient(135deg,var(--algo-blue),var(--pattern-purple),var(--problem-green));-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:20px;">
-    Great Job Today! 🎉
-  </div>
-  <div style="color:var(--muted);font-size:1.2em;line-height:1.8;">
-    You've learned the foundations of computational thinking!<br>
-    Next class: More problem-solving and logic! 🚀
+  <div id="quizBody"></div>
+  <div class="final-box" id="finalBox">
+    <div class="final-score" id="finalScore"></div>
+    <div class="final-stars" id="finalStars"></div>
+    <div class="final-msg" id="finalMsg"></div>
   </div>
 </div>
 
 </div><!-- /wrapper -->
 
 <script>
-// Algorithm Task Examples
-const taskExamples = {
-  brush: [
-    "Pick up toothbrush",
-    "Wet toothbrush with water",
-    "Apply toothpaste",
-    "Brush teeth in circular motions (2 minutes)",
-    "Spit out toothpaste",
-    "Rinse mouth with water",
-    "Rinse toothbrush",
-    "Put toothbrush back"
-  ],
-  sandwich: [
-    "Take 2 slices of bread",
-    "Apply butter/mayo on one slice",
-    "Add cheese slice",
-    "Add tomato slices",
-    "Add lettuce",
-    "Put second bread slice on top",
-    "Cut in half (optional)",
-    "Enjoy your sandwich!"
-  ],
-  school: [
-    "Wake up (set alarm)",
-    "Brush teeth",
-    "Take a shower",
-    "Get dressed in uniform",
-    "Eat breakfast",
-    "Pack school bag (books, lunch)",
-    "Wear shoes",
-    "Leave for school"
-  ]
-};
-
-function updateTaskExample() {
-  const task = document.getElementById('taskSelect').value;
-  const customDiv = document.getElementById('customTask');
-  const stepsDiv = document.getElementById('taskSteps');
-  const resultDiv = document.getElementById('algoResult');
+// Data Converter
+function convertData() {
+  const type = document.getElementById('dataType').value;
+  const input = document.getElementById('dataInput').value;
+  const result = document.getElementById('dataResult');
   
-  resultDiv.innerHTML = '';
+  const numbers = input.split(',').map(n => parseFloat(n.trim())).filter(n => !isNaN(n));
   
-  if (task === 'custom') {
-    customDiv.style.display = 'block';
-    stepsDiv.innerHTML = '';
-  } else if (task && taskExamples[task]) {
-    customDiv.style.display = 'none';
-    let html = '<div style="background:rgba(59,130,246,0.05);border-radius:10px;padding:20px;">';
-    html += '<div style="font-family:\'Fredoka One\',cursive;font-size:18px;color:var(--algo-blue);margin-bottom:16px;">Algorithm Steps:</div>';
-    taskExamples[task].forEach((step, i) => {
-      html += `<div class="step-item"><div class="step-num">${i+1}</div><div class="step-text">${step}</div></div>`;
-    });
-    html += '</div>';
-    stepsDiv.innerHTML = html;
-  } else {
-    customDiv.style.display = 'none';
-    stepsDiv.innerHTML = '';
-  }
-}
-
-function showCustomAlgorithm() {
-  const taskName = document.getElementById('customTaskName').value;
-  const steps = document.getElementById('customSteps').value;
-  const resultDiv = document.getElementById('algoResult');
-  
-  if (!taskName || !steps) {
-    resultDiv.innerHTML = '<div class="result-box"><div style="color:#ef4444;">Please enter both task name and steps!</div></div>';
+  if (numbers.length === 0) {
+    result.innerHTML = '<div class="result-box"><div style="color:#ef4444;">Please enter valid numbers!</div></div>';
     return;
   }
   
-  const stepLines = steps.split('\n').filter(s => s.trim());
-  let html = '<div class="result-box" style="background:rgba(59,130,246,0.05);border-color:var(--algo-blue);">';
-  html += `<div style="font-family:'Fredoka One',cursive;font-size:20px;color:var(--algo-blue);margin-bottom:16px;">Your Algorithm: ${taskName}</div>`;
-  stepLines.forEach((step, i) => {
-    const cleanStep = step.replace(/^(step\s*\d+:?\s*)/i, '').trim();
-    html += `<div class="step-item"><div class="step-num">${i+1}</div><div class="step-text">${cleanStep}</div></div>`;
-  });
-  html += '<div style="margin-top:20px;padding:16px;background:rgba(16,185,129,0.1);border-radius:8px;color:var(--problem-green);text-align:center;">✅ Great job! You created an algorithm!</div>';
-  html += '</div>';
-  resultDiv.innerHTML = html;
+  const avg = numbers.reduce((a,b) => a+b, 0) / numbers.length;
+  const max = Math.max(...numbers);
+  const min = Math.min(...numbers);
+  
+  let dataHTML = `<div style="background:#ef4444;color:#000;padding:8px;border-radius:8px;margin-bottom:12px;font-weight:700;">📊 DATA (Raw):</div>`;
+  dataHTML += `<div style="font-family:'Fira Code',monospace;margin-bottom:20px;">${numbers.join(', ')}</div>`;
+  
+  let infoHTML = `<div style="background:var(--info-green);color:#000;padding:8px;border-radius:8px;margin-bottom:12px;font-weight:700;">💡 INFORMATION (Meaningful):</div>`;
+  
+  if (type === 'scores') {
+    const grade = avg >= 90 ? 'A' : avg >= 80 ? 'B' : avg >= 70 ? 'C' : avg >= 60 ? 'D' : 'F';
+    infoHTML += `• Student's test scores<br>• Average: ${avg.toFixed(1)}%<br>• Grade: <strong>${grade}</strong><br>• Highest: ${max}% | Lowest: ${min}%`;
+  } else if (type === 'temps') {
+    const desc = avg > 30 ? 'Hot day!' : avg > 20 ? 'Pleasant weather' : avg > 10 ? 'Cool day' : 'Cold weather';
+    infoHTML += `• Temperature readings<br>• Average: ${avg.toFixed(1)}°C<br>• ${desc}<br>• High: ${max}°C | Low: ${min}°C`;
+  } else {
+    const total = numbers.reduce((a,b) => a+b, 0);
+    infoHTML += `• Sales data<br>• Total sales: $${total.toFixed(2)}<br>• Average: $${avg.toFixed(2)}<br>• Best: $${max} | Worst: $${min}`;
+  }
+  
+  result.innerHTML = `
+    <div class="result-box" style="background:rgba(6,182,212,0.05);border-color:var(--data-cyan);">
+      ${dataHTML}
+      ${infoHTML}
+      <div style="margin-top:20px;padding:12px;background:rgba(16,185,129,0.1);border-radius:8px;color:var(--info-green);">
+        ✅ See the difference? Data became MEANINGFUL!
+      </div>
+    </div>
+  `;
 }
 
-// Pattern Recognition Game
-const patterns = [
-  {seq: ['2', '4', '6', '8', '?'], ans: '10', type: 'numbers', explain: 'Even numbers: +2 each time'},
-  {seq: ['🔴', '🔵', '🔴', '🔵', '?'], ans: '🔴', type: 'colors', explain: 'Alternating red and blue'},
-  {seq: ['A', 'C', 'E', 'G', '?'], ans: 'I', type: 'letters', explain: 'Skip one letter each time'},
-  {seq: ['⭐', '⭐⭐', '⭐⭐⭐', '⭐⭐⭐⭐', '?'], ans: '⭐⭐⭐⭐⭐', type: 'stars', explain: 'Adding one star each time'},
-  {seq: ['1', '4', '9', '16', '?'], ans: '25', type: 'squares', explain: 'Square numbers: 1², 2², 3², 4², 5²'}
+// Ethics Scenarios
+const ethicsScenarios = [
+  {
+    q: "You're building a facial recognition system for security. Your training data has 90% white faces and only 10% from other ethnicities. What do you do?",
+    opts: [
+      "Use the data anyway — it's what I have",
+      "Collect more diverse data before releasing",
+      "Release it with a warning label",
+      "Only market it to white people"
+    ],
+    correct: 1,
+    explain: "You MUST collect diverse, representative data! Biased AI causes real harm to underrepresented groups. Always ensure your training data reflects the diversity of your users."
+  },
+  {
+    q: "Your company wants to track employee productivity by monitoring every keystroke and mouse movement. They ask you to build this. What do you do?",
+    opts: [
+      "Build it — it's my job",
+      "Refuse — it's an invasion of privacy",
+      "Build it but tell employees about it",
+      "Build it anonymously so employees don't know"
+    ],
+    correct: 1,
+    explain: "This is extreme surveillance that violates privacy. Ethical developers refuse projects that harm people, even if asked. If monitoring is necessary, it should be transparent, limited, and consensual."
+  },
+  {
+    q: "You discover your AI hiring system rejects women applicants more often than men with identical qualifications. What do you do?",
+    opts: [
+      "Ignore it — the AI decided",
+      "Immediately stop the system and fix the bias",
+      "Keep using it but hire some women manually",
+      "Blame the training data and move on"
+    ],
+    correct: 1,
+    explain: "STOP immediately! Biased AI perpetuates discrimination. You must fix the bias before continuing. This is illegal in many places and deeply unethical."
+  }
 ];
 
-let currentPattern = 0;
+let currentScenario = 0;
 
-function loadPattern() {
-  if (currentPattern >= patterns.length) {
-    document.getElementById('patternResult').innerHTML = `
-      <div class="result-box" style="background:rgba(139,92,246,0.1);border-color:var(--pattern-purple);text-align:center;">
-        <div style="font-family:'Fredoka One',cursive;font-size:24px;color:var(--pattern-purple);margin-bottom:12px;">🎉 All Patterns Complete!</div>
-        <div style="font-size:16px;color:var(--muted);">You found all ${patterns.length} patterns! Great pattern recognition skills!</div>
-        <button class="btn btn-pattern" onclick="currentPattern=0;loadPattern()" style="margin-top:16px;">Play Again 🔄</button>
+function loadEthicsScenario() {
+  if (currentScenario >= ethicsScenarios.length) {
+    document.getElementById('ethicsScenario').innerHTML = `
+      <div style="text-align:center;padding:30px;">
+        <div style="font-size:48px;margin-bottom:16px;">🎉</div>
+        <div style="font-family:'Fredoka One',cursive;font-size:24px;color:var(--ethics-pink);margin-bottom:12px;">
+          All Scenarios Complete!
+        </div>
+        <div style="color:var(--muted);">
+          You've thought through important ethical dilemmas. Remember these when building AI!
+        </div>
+        <button class="btn btn-ethics" onclick="currentScenario=0;loadEthicsScenario()" style="margin-top:20px;">
+          Restart Scenarios 🔄
+        </button>
       </div>
     `;
-    document.getElementById('patternGame').innerHTML = '';
     return;
   }
   
-  const p = patterns[currentPattern];
-  let html = '<div style="background:rgba(255,255,255,0.03);border-radius:10px;padding:20px;">';
-  html += `<div style="font-size:14px;color:var(--muted);margin-bottom:12px;">Pattern ${currentPattern+1} of ${patterns.length}</div>`;
-  html += '<div class="pattern-grid">';
-  p.seq.forEach(item => {
-    html += `<div class="pattern-box">${item}</div>`;
+  const s = ethicsScenarios[currentScenario];
+  const html = `
+    <div style="font-size:14px;color:var(--muted);margin-bottom:12px;">Scenario ${currentScenario + 1} of ${ethicsScenarios.length}</div>
+    <div style="font-size:17px;font-weight:600;margin-bottom:20px;line-height:1.7;">${s.q}</div>
+    <div style="display:grid;gap:10px;">
+      ${s.opts.map((opt, i) => `
+        <button class="opt" onclick="answerScenario(${i})" style="text-align:left;">
+          ${String.fromCharCode(65 + i)}. ${opt}
+        </button>
+      `).join('')}
+    </div>
+    <div id="scenarioFeedback" style="margin-top:16px;"></div>
+  `;
+  
+  document.getElementById('ethicsScenario').innerHTML = html;
+}
+
+function answerScenario(chosen) {
+  const s = ethicsScenarios[currentScenario];
+  const correct = chosen === s.correct;
+  const feedback = document.getElementById('scenarioFeedback');
+  
+  feedback.innerHTML = `
+    <div style="background:${correct ? 'rgba(16,185,129,0.1)' : 'rgba(239,68,68,0.1)'};border:2px solid ${correct ? 'var(--info-green)' : '#ef4444'};border-radius:10px;padding:20px;">
+      <div style="font-size:20px;font-weight:700;margin-bottom:12px;">
+        ${correct ? '✅ Ethical Choice!' : '❌ Think Again...'}
+      </div>
+      <div style="line-height:1.8;">${s.explain}</div>
+    </div>
+  `;
+  
+  currentScenario++;
+  setTimeout(() => {
+    loadEthicsScenario();
+  }, 3000);
+}
+
+// Quiz
+const QS = [
+  {q: 'What is data?', opts: ['Processed information', 'Raw facts without context', 'Knowledge', 'Wisdom'], ans: 1, explain: 'Data is raw, unprocessed facts and figures without meaning!'},
+  {q: 'What is information?', opts: ['Random numbers', 'Data with context and meaning', 'Unorganized facts', 'Binary code'], ans: 1, explain: 'Information is data that has been processed and given meaning!'},
+  {q: 'What comes after Information in the hierarchy?', opts: ['Data', 'Knowledge', 'Numbers', 'Files'], ans: 1, explain: 'The hierarchy is: Data → Information → Knowledge → Wisdom!'},
+  {q: 'How does AI help with data?', opts: ['Deletes it', 'Transforms it into information', 'Ignores it', 'Makes it slower'], ans: 1, explain: 'AI finds patterns in data and turns it into useful information!'},
+  {q: 'What is AI bias?', opts: ['AI being slow', 'AI unfairly favoring certain groups', 'AI being expensive', 'AI using electricity'], ans: 1, explain: 'Bias is when AI unfairly discriminates against certain groups!'},
+  {q: 'How do we fix AI bias?', opts: ['Ignore it', 'Use diverse training data', 'Make AI slower', 'Delete AI'], ans: 1, explain: 'We must train AI on diverse, representative data from all groups!'},
+  {q: 'What is privacy in AI?', opts: ['Making AI secret', 'Protecting personal information', 'Hiding AI', 'Making AI expensive'], ans: 1, explain: 'Privacy means protecting people\'s personal data from misuse!'},
+  {q: 'What are deepfakes?', opts: ['Real videos', 'AI-generated fake videos', 'Video games', 'Deep learning'], ans: 1, explain: 'Deepfakes are AI-created fake videos that look real!'},
+  {q: 'What is transparency in AI?', opts: ['Making AI invisible', 'Explaining how AI makes decisions', 'Using glass computers', 'Deleting data'], ans: 1, explain: 'Transparency means AI can explain its decisions!'},
+  {q: 'Should AI explain important decisions (like loan rejections)?', opts: ['No', 'Yes', 'Sometimes', 'Never'], ans: 1, explain: 'Yes! People have a right to understand why AI made a decision!'},
+  {q: 'What should happen when AI replaces jobs?', opts: ['Nothing', 'Retrain workers for new jobs', 'Ban AI', 'Fire everyone'], ans: 1, explain: 'We should help workers transition through reskilling programs!'},
+  {q: 'Who is responsible for building ethical AI?', opts: ['Only bosses', 'Only users', 'Everyone building AI', 'Nobody'], ans: 2, explain: 'Everyone involved in building AI is responsible for making it ethical!'}
+];
+
+let correct = 0, answered = 0;
+
+function buildQuiz() {
+  correct = 0; answered = 0;
+  document.getElementById('scoreChip').textContent = '0 / 12';
+  document.getElementById('progBar').style.width = '0%';
+  document.getElementById('finalBox').classList.remove('show');
+  const body = document.getElementById('quizBody');
+  body.innerHTML = '';
+  QS.forEach((q, qi) => {
+    const card = document.createElement('div');
+    card.className = 'qcard'; card.id = 'qcard' + qi;
+    card.innerHTML = `
+      <div class="qnum">QUESTION ${qi + 1} OF ${QS.length}</div>
+      <div class="qtext">${q.q}</div>
+      <div class="opts" id="opts${qi}">
+        ${q.opts.map((o, oi) => `<button class="opt" onclick="answer(${qi},${oi})">${String.fromCharCode(65 + oi)}. ${o}</button>`).join('')}
+      </div>
+      <div class="feedback" id="fb${qi}"></div>
+    `;
+    body.appendChild(card);
   });
-  html += '</div>';
-  html += '<div style="margin-top:20px;text-align:center;">';
-  html += '<input type="text" id="patternAnswer" placeholder="What comes next?" style="max-width:200px;text-align:center;">';
-  html += '<div><button class="btn btn-pattern" onclick="checkPattern()" style="margin-top:12px;">Check Answer ✓</button></div>';
-  html += '</div></div>';
-  
-  document.getElementById('patternGame').innerHTML = html;
-  document.getElementById('patternResult').innerHTML = '';
 }
 
-function checkPattern() {
-  const userAnswer = document.getElementById('patternAnswer').value.trim();
-  const p = patterns[currentPattern];
-  
-  if (!userAnswer) return;
-  
-  const correct = userAnswer.toUpperCase() === p.ans.toUpperCase();
-  
-  let html = `<div class="result-box" style="background:${correct ? 'rgba(16,185,129,0.1)' : 'rgba(239,68,68,0.1)'};border-color:${correct ? 'var(--problem-green)' : '#ef4444'};">`;
-  html += `<div style="font-size:20px;margin-bottom:12px;">${correct ? '✅ Correct!' : '❌ Not quite!'}</div>`;
-  html += `<div style="color:var(--muted);">`;
-  if (correct) {
-    html += `<strong>Pattern:</strong> ${p.explain}<br>You recognized the pattern! 🎉`;
+function answer(qi, chosen) {
+  const q = QS[qi];
+  const card = document.getElementById('qcard' + qi);
+  const btns = document.querySelectorAll(`#opts${qi} .opt`);
+  btns.forEach(b => b.disabled = true);
+  const ok = chosen === q.ans;
+  btns[chosen].classList.add(ok ? 'correct' : 'wrong');
+  if (!ok) btns[q.ans].classList.add('correct');
+  const fb = document.getElementById('fb' + qi);
+  fb.textContent = (ok ? '✅ Correct! ' : '❌ Not quite! ') + q.explain;
+  fb.className = 'feedback ' + (ok ? 'ok' : 'bad');
+  card.classList.add(ok ? 'ok' : 'bad');
+  if (ok) correct++;
+  answered++;
+  document.getElementById('scoreChip').textContent = `${correct} / ${answered}`;
+  document.getElementById('progBar').style.width = `${(answered / QS.length) * 100}%`;
+  if (answered === QS.length) showFinal();
+}
+
+function showFinal() {
+  const fb = document.getElementById('finalBox');
+  const fs = document.getElementById('finalScore');
+  const fst = document.getElementById('finalStars');
+  const fm = document.getElementById('finalMsg');
+  fs.textContent = `${correct} / ${QS.length}`;
+  if (correct === QS.length) {
+    fs.className = 'final-score perfect';
+    fst.textContent = '⭐⭐⭐';
+    fm.textContent = 'PERFECT SCORE!\nEthical AI Champion!\nReady to build responsibly! 🚀';
+  } else if (correct >= 10) {
+    fs.className = 'final-score great';
+    fst.textContent = '⭐⭐';
+    fm.textContent = 'EXCELLENT WORK!\nYou understand the key concepts!\nKeep learning!';
   } else {
-    html += `The answer is: <strong>${p.ans}</strong><br><strong>Pattern:</strong> ${p.explain}`;
+    fs.className = 'final-score ok';
+    fst.textContent = '⭐';
+    fm.textContent = 'GOOD EFFORT!\nReview the concepts and\ntry again!';
   }
-  html += '</div></div>';
-  
-  document.getElementById('patternResult').innerHTML = html;
-  
-  if (correct) {
-    currentPattern++;
-    setTimeout(() => {
-      loadPattern();
-    }, 2000);
-  }
+  fb.classList.add('show');
 }
 
-// Problem Breakdown Examples
-const problemExamples = {
-  instagram: [
-    {label: 'STEP 1', content: 'Check who you follow and interact with most'},
-    {label: 'STEP 2', content: 'Look at posts you liked/commented on recently'},
-    {label: 'STEP 3', content: 'Find posts from those accounts'},
-    {label: 'STEP 4', content: 'Check how recent each post is'},
-    {label: 'STEP 5', content: 'Check how many likes/comments each post has'},
-    {label: 'STEP 6', content: 'Rank posts by: recency + your interest + popularity'},
-    {label: 'STEP 7', content: 'Show top posts in your feed!'}
-  ],
-  netflix: [
-    {label: 'STEP 1', content: 'Check what shows/movies you watched'},
-    {label: 'STEP 2', content: 'Identify genres you like (action, comedy, etc.)'},
-    {label: 'STEP 3', content: 'Find shows OTHER people with similar taste watched'},
-    {label: 'STEP 4', content: 'Check ratings of those shows'},
-    {label: 'STEP 5', content: 'Filter by what you haven\'t watched yet'},
-    {label: 'STEP 6', content: 'Rank by match percentage'},
-    {label: 'STEP 7', content: 'Show "Top Picks for You"!'}
-  ],
-  game: [
-    {label: 'STEP 1', content: 'Check game objective (score points, reach finish, etc.)'},
-    {label: 'STEP 2', content: 'Track player\'s current status (score, position, lives)'},
-    {label: 'STEP 3', content: 'Compare to winning conditions'},
-    {label: 'STEP 4', content: 'If conditions met → You Win!'},
-    {label: 'STEP 5', content: 'If not, check if you lost (out of lives/time)'},
-    {label: 'STEP 6', content: 'Display result and update leaderboard'}
-  ]
-};
-
-function updateProblemExample() {
-  const problem = document.getElementById('problemSelect').value;
-  const customDiv = document.getElementById('customProblem');
-  const stepsDiv = document.getElementById('problemSteps');
-  const resultDiv = document.getElementById('problemResult');
-  
-  resultDiv.innerHTML = '';
-  
-  if (problem === 'custom') {
-    customDiv.style.display = 'block';
-    stepsDiv.innerHTML = '';
-  } else if (problem && problemExamples[problem]) {
-    customDiv.style.display = 'none';
-    let html = '<div class="breakdown-flow">';
-    problemExamples[problem].forEach((step, i) => {
-      html += `<div class="flow-step"><div class="flow-label">${step.label}</div><div class="flow-content">${step.content}</div></div>`;
-    });
-    html += '</div>';
-    stepsDiv.innerHTML = html;
-  } else {
-    customDiv.style.display = 'none';
-    stepsDiv.innerHTML = '';
-  }
-}
-
-function showCustomProblem() {
-  const problemName = document.getElementById('customProblemName').value;
-  const steps = document.getElementById('customProblemSteps').value;
-  const resultDiv = document.getElementById('problemResult');
-  
-  if (!problemName || !steps) {
-    resultDiv.innerHTML = '<div class="result-box"><div style="color:#ef4444;">Please enter both problem and steps!</div></div>';
-    return;
-  }
-  
-  const stepLines = steps.split('\n').filter(s => s.trim());
-  let html = '<div class="result-box" style="background:rgba(16,185,129,0.05);border-color:var(--problem-green);">';
-  html += `<div style="font-family:'Fredoka One',cursive;font-size:20px;color:var(--problem-green);margin-bottom:16px;">Problem Breakdown: ${problemName}</div>`;
-  html += '<div class="breakdown-flow">';
-  stepLines.forEach((step, i) => {
-    const cleanStep = step.replace(/^(step\s*\d+:?\s*)/i, '').trim();
-    html += `<div class="flow-step"><div class="flow-label">STEP ${i+1}</div><div class="flow-content">${cleanStep}</div></div>`;
-  });
-  html += '</div>';
-  html += '<div style="margin-top:20px;padding:16px;background:rgba(16,185,129,0.1);border-radius:8px;color:var(--problem-green);text-align:center;">✅ Excellent! You broke down a complex problem into simple steps!</div>';
-  html += '</div>';
-  resultDiv.innerHTML = html;
-}
+// Initialize
+buildQuiz();
 </script>
 </body>
 </html>
